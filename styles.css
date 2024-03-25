@@ -1,0 +1,581 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300&display=swap');
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Be Vietnam Pro", sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root{                      /* CREATING GLOBAL VARIABLE*/
+    --bgOrange: #e84949;
+}
+
+
+#wrapper{
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.container{
+    width: 1200px;
+    margin:0 auto;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;  /* contaiin going to the extrem side */
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.logo{
+    margin-top: -1em;
+    width: 80px;
+}
+
+.logo-container{
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+}
+
+.logo-text{
+    margin-left: -1.7rem;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.nav-items{
+    display: flex;
+    padding: 0 4rem;
+    gap: 2rem;
+}
+
+.nav-items div{
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.nav-items div a{
+    color: black;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+.nav-items div:hover{
+    transition: 0.8s;  
+    font-weight: bold;
+}
+
+.hero-section{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    margin: 4rem auto;
+    padding: 0 1rem;
+    padding-bottom: 8rem;
+}
+
+.fedded-text{
+    user-select: none;
+    font-size: 7em;
+    color: rgb(231, 231, 231);
+    bottom: -16%;
+    left: -5%;
+    font-weight: bold;
+    transition: all 3s;
+    position: absolute;
+}
+
+.hero-section-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.hero-section-heading{
+    font-size: 35px;
+    color: #343d68;
+    font-weight: 500;
+}
+
+.role{
+    color: #4e45d5;
+    font-weight: 800;
+}
+
+.hero-section-sub-heading{
+    font-size: 45px;
+    line-height: 45px;
+}
+
+.hero-section-description{
+    margin-top: 1rem;
+    width: 70%;
+    font-weight: 500;
+}
+
+.btn-hire{
+    background-color: var(--bgOrange);
+    width: fit-content;
+    color: white;
+    padding: 0.8rem 2.3rem;
+    box-shadow: 5px 5px 7px 0px #0000003f;
+    font-size: 18px;
+    cursor: pointer;
+    /* transition: all 0.5s; */
+    font-weight: 500;
+    /* border: solid 3px transparent; */
+    position: relative;
+    z-index: 1;
+}
+
+.btn-hire::before{
+    content: "";
+    background-color: #fff;
+    position: absolute;
+    top: 0px;
+    right: 0;
+    left: 0;
+    bottom: 0px;
+    transform: scaleX(0); 
+    transition: all 0.8s;
+    transform-origin: left;
+    z-index: -1;
+}
+
+.btn-hire:hover::before{
+    transform: scaleX(1);
+}
+
+.btn-hire:hover{
+    border: solid 3px var(--bgOrange);   /* using global variable */
+    color: black;
+}
+
+.hero-section-right{
+    position: relative;
+}
+
+.absolute{
+    position: absolute;
+}
+
+.user-image{
+    padding: 2.5rem;
+    filter: grayscale(1);
+    transition: all 1s;
+    animation: scaleImage 5s linear infinite;
+    height: -20%;
+    /* width: -50%; */
+}
+
+.user-image img {
+    z-index: -9;
+}
+
+@keyframes scaleImage{
+    0%{
+        filter: grayscale(0);
+        transform: scale(1);
+    }
+
+    50%{
+        filter: grayscale(1);
+        transform: scale(1.1);
+        box-shadow: 3px 3px 10px black;
+    }
+
+    100%{
+        filter: grayscale(0);
+        transform: scale(1); 
+    }
+}
+
+.icon-dots{
+    z-index: 9;
+    bottom: -1rem;
+    right: 0;
+    animation-name: dotAnimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes dotAnimation {
+    0%{
+        transform: translateY(0px);
+    }
+
+    50%{
+        transform: translateY(-15px);
+
+    }
+
+    100%{
+        transform: translateY(0px);
+ 
+    }
+} 
+
+.icon-cube{
+    z-index: 9;
+    top: -0.8em;
+    right: 1em;
+    animation-name: cubeAnimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes cubeAnimation {
+    0%{
+        transform: rotateY(0deg) translateY(0px);
+    }
+
+    50%{
+        transform: rotateY(180deg) translateY(-12px);
+
+    }
+
+    100%{
+        transform: rotateY(360 deg) translateY(0px);
+ 
+    }
+} 
+
+.icon-circle{
+    z-index: 9;
+    bottom: 0;
+    left: 0;
+    animation-name: circleAnimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes circleAnimation {
+    /* 0%{
+        left: 0;
+        bottom: 0;
+    } */
+
+    50%{
+        left: 5%;
+        bottom: 10%;
+
+    }
+
+    /* 100%{
+        left: 0;
+        bottom: 0;
+    } */
+} 
+
+.icon-zigzag{
+    z-index: 9;
+    top: 1.5em;
+    left: -0.3em;
+    animation-name: zigAnimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes zigAnimation {
+    /* 0%{
+        top: 0;
+        left: 0;
+    } */
+
+    50%{
+        top: 2%;
+        left: 5%;
+    }
+
+    /* 100%{
+        top: 0;
+        left: 0;
+    } */
+} 
+
+.icon-plus{
+    z-index: 9;
+    top: -0.8rem;
+    left: 50%;
+    animation-name: plusAnimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    /* animation: plusAnimation 5s ease-in infinite; */
+}
+
+@keyframes plusAnimation {
+    /* 0%{
+        top: 0;
+        left: 0;
+    } */
+
+    50%{
+        top: 3%;
+        left: 48%;
+    }
+
+    /* 100%{
+        top: 0;
+        left: 0;
+    } */
+}
+
+.Project-section{
+    background-color: rgb(231, 231, 231);
+    margin-top: 4rem;
+}
+
+.page-header{
+    color: var(--bgOrange);
+    font-size: 90px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.project-cointainer{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+}
+
+.project-card{
+    width: 90%;
+    height: 550px;
+    /* background-image: url(Projects/Project1.png);   for testing & designing the page */
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    box-shadow: 0px 0px 40px #1f1f1f;
+}
+
+.project-card::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1f1f1f9a; 
+    transform: scaleX(1);
+    z-index: 0;
+}
+
+.project-card::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #343d68,#343d68be,#343d687c);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.4s;
+    z-index: 1;
+}
+
+.project-card:hover::before{
+    transform: scaleX(1);
+}
+
+.project-number{
+    position: absolute;
+    font-size: 200px;
+    font-weight: 600;
+    color: white;
+    z-index: 1;
+    /* display: none;       so the 01-04 hide to the display */
+            /* OR WE CAN DO THAT USING opacity: 0; */
+    opacity: 0;
+}
+
+/* when we hover over card then 01-04 comming front */
+
+.project-card:hover .project-number{
+    /* display: block;   OR   opacity: 1; */
+    opacity: 1;
+    /* transition: ; */
+}
+
+.project-number-left{
+    right: -40px;
+    top: -45px;
+}
+
+.project-number-right{
+    left: -40px;
+    top: -45px;
+}
+
+.project-content{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 2em;
+    bottom: 20%;
+    z-index: 2;
+    gap: 1em;
+    transition: all 0.4s;
+}
+
+.project-content-left{
+    left: 10%;
+}
+
+.project-content-right{
+    right: 10%;
+}
+
+.project-skill-cointainer{
+    display: flex;
+    width: 60%;
+    gap: 10px;
+    flex-wrap: wrap;
+
+}
+
+.project-skill{
+    width: 40px;
+}
+
+.project-heading{
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 3rem;
+}
+
+.project-sub-heading{
+    width: 70%;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.btn-grp{
+    display: flex;
+    gap: 0.9em;
+    align-items: center;
+}
+
+.btn-project:hover{
+    border: none;
+}
+
+.icon{
+    color: white;
+    font-size: 25px;
+    transition: 0.4s;
+}
+
+.icon:hover{
+    color: var(--bgOrange);
+}
+
+
+.project-card:hover .project-content{
+    transform: scale(1.1);
+}
+
+#project1{
+    /* margin-right: 120px; */
+    background-image: url(Projects/Project1.png);
+}
+
+#project2{
+    margin-left: 120px;
+    background-image: url(Projects/Project2.png);
+}
+
+#project3{
+    /* margin-right: 120px; */
+    background-image: url(Projects/Project3.png);
+}
+
+#project4{
+    margin-left: 120px;
+    background-image: url(Projects/Project4.png);
+}
+
+/* media query for responsiveness */
+
+@media (max-width:1300px){
+    .page-header{
+        padding-top: 30px;
+        color: var(--bgOrange);
+        text-align: center;
+        font-size: 40px;
+    }
+
+    .project-cointainer {
+        padding: 5px;
+        margin: 10px;
+        gap: 60px;
+    }
+
+    .project-card{
+        width: 100%;
+        height: 300px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .project-content{
+        scale: 0.5;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0; 
+    }
+
+    .project-content-left{
+        left: 0;
+    }
+
+    .project-heading{
+        font-size: 40px;
+        width: 100%;
+    }
+
+    .project-sub-heading{
+        width: 100%;
+    }
+
+    #project2{
+        margin-left: 0;
+    }
+
+    #project4{
+        margin-left: 0;
+    }
+
+    .project-skill-cointainer{
+        width: 100%;
+    }
+
+    .project-skill{
+        width: 35px;
+    }
+
+    .project-card:hover .project-number{
+        display: none;
+    }
+
+    .project-card:hover .project-content{
+        scale: 0.55;
+    }
+}
